@@ -1,0 +1,9 @@
+#environment file
+.env  
+
+#dependencies
+/node_modules
+
+#unnecessary files and folders
+/docs
+/test.js /server.js /streams.js 

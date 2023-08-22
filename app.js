@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 // const path = require('path');
 const mongoose = require("mongoose");
@@ -9,11 +10,11 @@ const app = express();
 
 
 
-const dbURI ="mongodb+srv://Abuzayd:Abuzayd@cluster0.1q3oapz.mongodb.net/Affiliate_website?retryWrites=true&w=majority"
+const dbURI = process.env.DBURL;
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then((result)=>{
-    app.listen(8000, () => {
-        console.log("listening on port 8000");
+    app.listen(process.env.PORT, () => {
+        console.log(`listening on port ${process.env.PORT}`);
     })
 })
 .catch((err) => console.log(err));
